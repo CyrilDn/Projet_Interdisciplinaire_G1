@@ -1,6 +1,6 @@
 <?php
-require_once '../fichiers/brassin.php';
-require_once '../connexionbd.php';
+require_once 'fichiers/brassin.php';
+require_once 'connexionbd.php';
 class brassinModele{
     private $conn;
     public function __construct(){
