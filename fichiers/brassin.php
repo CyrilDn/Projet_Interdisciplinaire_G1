@@ -13,9 +13,9 @@ class brassin{
     public function __construct($brassin_id, $nom_brassin, $date_debut, $volume, $responsable, $statut){
 
         $this->brassin_id = $brassin_id;
-        $this->nom = $nom_brassin;
-        $this->dates = $date_debut;
-        $this->volumes = $volume;
+        $this->nom_brassin = $nom_brassin;
+        $this->date_debut = $date_debut;
+        $this->volume = $volume;
         $this->responsable = $responsable;
         $this->statut = $statut;
     }
@@ -24,6 +24,18 @@ class brassin{
     }
     public function getNomBrassin(){
         return $this->nom_brassin;
+    }
+    public function getVolume(){
+        return $this->volume;
+    }
+    public function getDateDebut(){
+        return $this->date_debut;
+    }
+    public function getResponsable(){
+        return $this->responsable;
+    }
+    public function getStatut(){
+        return $this->statut;
     }
 
     //... finir les autres getters et setters ici ...
