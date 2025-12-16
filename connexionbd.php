@@ -6,7 +6,7 @@ class connexionbd {
     private $nom_bd = "bd_brassin_or";
     private $nom_util = "root";
     private $mdp = "";
-    private $conn;
+    public $conn;
 
    
 
