@@ -10,8 +10,8 @@
     <?php
     $modele = new brassinModele();
     $controleur = new brassinControleur($modele);
-    $bd = $modele->getbd();
-    while ($ligne = $bd->fetch()) {
+    $bd = $modele->liredb();
+    foreach($bd as $ligne) {
         echo '<div">';
         echo '<h2>Id Brassin : ' . $ligne['id_brassin'] . '</h2>';
         echo '<p>Nom : ' . $ligne['nom'] . '</p>';
