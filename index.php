@@ -1,4 +1,7 @@
-<?= require_once 'models/brassinModele.php';?>
+<?php
+    require_once 'models/brassinModele.php';
+    require_once 'controleurs/brassinControleur.php';    
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
