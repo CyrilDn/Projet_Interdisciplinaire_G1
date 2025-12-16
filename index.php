@@ -13,9 +13,9 @@
     $bd = $modele->liredb();
     foreach($bd as $ligne) {
         echo '<div">';
-        echo '<h2>Id Brassin : ' . $ligne['id_brassin'] . '</h2>';
-        echo '<p>Nom : ' . $ligne['nom'] . '</p>';
-        echo '<p>Volume : ' . $ligne['volume'] . '</p>';
+        echo '<h2>Id Brassin : ' . $ligne->getBrassinId() . '</h2>';
+        // echo '<p>Nom : ' . $ligne['nom'] . '</p>';
+        // echo '<p>Volume : ' . $ligne['volume'] . '</p>';
         echo '</div>';
     }
     ?>
