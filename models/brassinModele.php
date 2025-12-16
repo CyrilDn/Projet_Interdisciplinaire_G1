@@ -1,6 +1,11 @@
 <?php
 require_once '../fichiers/brassin.php';
-class brassinModele extends connexionbd {
+require_once '../connexionbd.php';
+class brassinModele{
+    public function __construct(){
+        $db = New connexionbd();
+        $this->conn = $db->getbd();
+    }
     public function liredb() {
         $bdd = $this->getbd(); //utilisation de l'héritage si tout fonctionne bien
         $resultat = $bdd->query("SELECT id_brassin, nom, dates, volume, responsable, statut FROM brassin");
@@ -18,5 +23,3 @@ class brassinModele extends connexionbd {
         return $brassins;
     }
 }
-
-?>

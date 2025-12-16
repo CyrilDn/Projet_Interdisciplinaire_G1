@@ -20,4 +20,5 @@ class connexionbd {
         }
         return $this->conn;
     }
-?>
+}
+

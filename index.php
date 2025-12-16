@@ -1,6 +1,4 @@
-<?php
-require_once 'connexionbd.php';
-?>
+<?= require_once 'models/brassinModele.php';?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
