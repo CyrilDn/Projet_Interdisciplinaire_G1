@@ -1,17 +1,23 @@
 <?php
-    date_default_timezone_set('Europe/Brussels');
-    $hote='localhost';
-    $nomBD='brassin';
-    $user='root';
-    $mdp='';
-    try {
-        $bd=new PDO('mysql:host='.$hote.';dbname='.$nomBD, $user, $mdp);
-        $bd->exec("SET NAMES 'utf8'");
-    }
-    catch (Exception $e) {
-        die('Erreur de connexion à la BD : '.$e->getMessage());
-    }
-    //test
-    echo "Connexion établie à la base de données ".$nomBD;
 
+class connexionbd {
+
+    private $hote = "localhost";
+    private $nom_bd = "bd_brassin_or";
+    private $nom_util = "root";
+    private $mdp = "";
+    private $conn;
+
+   
+
+    public function getbd(){
+        try {
+            $this->conn=new PDO('mysql:host='.$this->hote.';dbname='.$this->nom_bd, $this->nom_util, $this->mdp);
+            $this->conn->exec("SET NAMES 'utf8'");
+    }
+        catch (Exception $e) {
+            die('Erreur de connexion à la BD : '.$e->getMessage());
+        }
+        return $this->conn;
+    }
 ?>
