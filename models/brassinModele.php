@@ -22,4 +22,9 @@ class brassinModele{
         }
         return $brassins;
     }
+
+    // public function ajoutdb(){
+    //     $bdd = $this->conn;
+    //     $resultat = $bdd->query("INSERT INTO employe (id_employe, nom, role, occupe, id_materiel, id_brassin) VALUES (:id_employe, :nom, :role, :occupe, :id_materiel, :id_brassin)")
+    // }
 }
