@@ -8,10 +8,10 @@
     foreach($bd as $ligne) {
         echo '<div">';
         echo '<h2>Id Brassin : ' . $ligne->getBrassinId() . '</h2>';
-        echo '<p>Nom : ' . $ligne->getBrassinId() . '</p>';
-        echo '<p>Volume : ' . $ligne->getBrassinId() . '</p>';
-        echo '<p>Respondable : ' . $ligne->getBrassinId() . '</p>';
-        echo '<p>Statut : ' . $ligne->getBrassinId() . '</p>';
+        echo '<p>Nom : ' . $ligne->getNomBrassin() . '</p>';
+        echo '<p>Volume : ' . $ligne->getVolume() . '</p>';
+        echo '<p>Respondable : ' . $ligne->getResponsable() . '</p>';
+        echo '<p>Statut : ' . $ligne->getStatut() . '</p>';
         echo '</div>';
     }
 ?>
