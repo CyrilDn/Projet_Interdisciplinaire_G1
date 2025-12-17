@@ -15,8 +15,8 @@ class brassinModele{
             $brassins[] = new Brassin(
                 $ligne['id_brassin'],
                 $ligne['nom_brassin'],
-                $ligne['volume'],
                 $ligne['date_debut'],
+                $ligne['volume'],
                 $ligne['responsable'],
                 $ligne['statut']
             );
