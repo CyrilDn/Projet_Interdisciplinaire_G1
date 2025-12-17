@@ -6,7 +6,7 @@ class evenementControleur {
         $this->model = $model;
     }
 
-    public function afficherBrassin(){
+    public function afficherEvenement(){
         $bd = $this->model->liredb();
         include "vues/evenementVue.php";
     }

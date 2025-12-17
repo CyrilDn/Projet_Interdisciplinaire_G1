@@ -5,11 +5,11 @@ require_once 'controleurs/evenementControleur.php';
 require_once 'models/evenementModele.php';
 
 if (isset($_GET['tables'])){
-    if ($_GET ['tables'] = 'brassin') {
+    if ($_GET ['tables'] == 'brassin') {
     $modele = new brassinModele();
     $controleur = new brassinControleur($modele);
     $controleur->afficherBrassin();
-    } elseif ($_GET ['tables'] = 'evenement') {
+    } elseif ($_GET ['tables'] == 'evenement') {
     $modele = new evenementModele();
     $controleur = new evenementControleur($modele);
     $controleur->afficherEvenement();
