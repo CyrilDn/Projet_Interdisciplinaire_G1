@@ -1,10 +1,5 @@
 <?php
-    require_once 'models/brassinModele.php';
-    require_once 'controleurs/brassinControleur.php'; 
 
-    $modele = new brassinModele();
-    $controleur = new brassinControleur($modele);
-    $bd = $modele->liredb();
     foreach($bd as $ligne) {
         echo '<div">';
         echo '<h2>Id Brassin : ' . $ligne->getBrassinId() . '</h2>';
