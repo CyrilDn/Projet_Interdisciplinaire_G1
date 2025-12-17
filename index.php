@@ -9,6 +9,12 @@ if (isset($_GET['tables'])){
     $modele = new brassinModele();
     $controleur = new brassinControleur($modele);
     $controleur->afficherBrassin();
+    if (isset($_POST)){
+        $controleur->ajouterBrassin();
+        $controleur->afficherBrassin();
+    }else{
+        echo "erreur lors de l'ajout dans la base de données";
+    }
     } elseif ($_GET ['tables'] == 'evenement') {
     $modele = new evenementModele();
     $controleur = new evenementControleur($modele);
@@ -21,6 +27,7 @@ if (isset($_GET['tables'])){
 
 }
 
+// Ajouter ce qui suis dans un header.php ?
 ?>
 <!DOCTYPE html>
 <html lang="fr">
