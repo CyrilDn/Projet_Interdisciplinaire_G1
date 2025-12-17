@@ -1,6 +1,7 @@
 <?php
 require_once 'fichiers/brassin.php';
 require_once 'connexionbd.php';
+
 class brassinModele{
     private $conn;
     public function __construct(){
@@ -23,8 +24,17 @@ class brassinModele{
         return $brassins;
     }
     
-    // public function ajoutdb(){
-    //     $bdd = $this->conn;
-    //     $resultat = $bdd->query("INSERT INTO employe (id_employe, nom, role, occupe, id_materiel, id_brassin) VALUES (:id_employe, :nom, :role, :occupe, :id_materiel, :id_brassin)")
-    // }
-}
+        public function ajouterdb($nom_brassin, $date_debut, $volume, $statut, $id_ingredient){
+            $bdd = $this->conn;
+            $resultat = $bdd->prepare("INSERT INTO brassin (nom_brassin, date_debut, volume, statut, id_ingredient) VALUES (:nom_brassin, :date_debut, :volume, :statut, :id_ingredient);");
+        
+            $resultat->bindValue('nom_brassin',$nom_brassin);
+            $resultat->bindValue('date_debut',$date_debut);
+            $resultat->bindValue('volume',$volume);
+            $resultat->bindValue('statut',$statut);
+            $resultat->bindValue('id_ingredient',$id_ingredient);
+
+            $resultat->execute();
+            }
+        }
+
