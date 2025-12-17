@@ -7,8 +7,11 @@
     <title>Brassin d'Or</title>
 </head>
 <body>
-    <h1>Les brassins</h1>
+    <h2>Les brassins</h2>
     <?php require_once '/vues/brassinVue.php';?> 
+
+    <h2>Les evenements</h2>
+    <?php require_once '/vues/evenementVue.php';?>
     
 </body>
 </html>

@@ -16,7 +16,7 @@ class evenementModele{
         $resultat = $bdd->query("SELECT id_evenement, type_evenement, debut_evenement, fin_evenement, responsable, id_employe FROM evenement");
         $evenement = [];
         while ($ligne = $resultat->fetch()) { //pour chaque ligne on crée un objet evenement en utilisant notre constructeur
-            $evenement[] = new Brassin(
+            $evenement[] = new Evenement(
                 $ligne['id_evenement'],
                 $ligne['type_evenement'],
                 $ligne['debut_evenement'],
