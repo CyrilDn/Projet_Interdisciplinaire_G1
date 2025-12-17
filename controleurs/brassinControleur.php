@@ -9,4 +9,8 @@ class brassinControleur {
         $bd = $this->model->liredb();
         include "vues/brassinVue.php";
     }
+
+    public function ajouterBrassin(){
+        $this->model->ajouterdb($_POST['nomBrassin'], $_POST['dateDebut'], $_POST['volume'], $_POST['statut']);
+    }
 }
