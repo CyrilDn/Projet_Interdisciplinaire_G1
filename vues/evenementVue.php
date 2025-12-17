@@ -1,10 +1,6 @@
 <?php
-    require_once 'models/evenementModele.php';
-    require_once 'controleurs/evenementControleur.php'; 
+    require_once 'fichiers/evenement.php';
 
-    $modele = new evenementModele();
-    $controleur = new evenementControleur($modele);
-    $bd = $modele->liredb();
     foreach($bd as $ligne) {
         echo '<div">';
         echo '<h2>Id Evenement : ' . $ligne->getIdEvent() . '</h2>';
