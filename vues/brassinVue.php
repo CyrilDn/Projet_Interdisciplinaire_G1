@@ -1,4 +1,5 @@
 <?php
+    require_once 'fichiers/brassin.php';
 
     foreach($bd as $ligne) {
         echo '<div">';
