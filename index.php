@@ -1,17 +1,26 @@
 <?php
-if ($_GET ['tables'] = 'brassin') {
+require_once 'controleurs/brassinControleur.php';
+require_once 'models/brassinModele.php';
+require_once 'controleurs/evenementControleur.php';
+require_once 'models/evenementModele.php';
+
+if (isset($_GET['tables'])){
+    if ($_GET ['tables'] = 'brassin') {
     $modele = new brassinModele();
     $controleur = new brassinControleur($modele);
     $controleur->afficherBrassin();
-} elseif ($_GET ['tables'] = 'evenement') {
+    } elseif ($_GET ['tables'] = 'evenement') {
     $modele = new evenementModele();
     $controleur = new evenementControleur($modele);
     $controleur->afficherEvenement();
-} elseif ($_GET ['tables'] = 'ingredient') {
-    require_once 'vues/ingredientVue.php';
-    $controleur = new ingredientControleur();
-    $controleur->afficherIngredient();
+    // } elseif ($_GET ['tables'] = 'ingredient') {
+    //     require_once 'vues/ingredientVue.php';
+    //     $controleur = new ingredientControleur();
+    //     $controleur->afficherIngredient();
+    }
+
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
