@@ -9,7 +9,7 @@ class brassinModele{
     }
     public function liredb() {
         $bdd = $this->conn; //utilisation de l'héritage si tout fonctionne bien
-        $resultat = $bdd->query("SELECT id_brassin, nom_brassin, date_debut, volume, responsable, statut FROM brassin");
+        $resultat = $bdd->query("SELECT id_brassin, nom_brassin, date_debut, volume, statut FROM brassin");
         $brassins = [];
         while ($ligne = $resultat->fetch()) { //pour chaque ligne on crée un objet brassin en utilisant notre constructeur
             $brassins[] = new Brassin(
@@ -17,7 +17,6 @@ class brassinModele{
                 $ligne['nom_brassin'],
                 $ligne['date_debut'],
                 $ligne['volume'],
-                $ligne['responsable'],
                 $ligne['statut']
             );
         }
