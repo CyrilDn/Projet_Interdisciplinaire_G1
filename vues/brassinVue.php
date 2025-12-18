@@ -9,25 +9,31 @@
         echo '<p>Nom : ' . $ligne->getNomBrassin() . '</p>';
         echo '<p>Volume : ' . $ligne->getVolume() . '</p>';
         echo '<p>Statut : ' . $ligne->getStatut() . '</p>';
+        echo '<a href="index.php?tables=brassin&action=modifier&id=' . $ligne->getBrassinId() . '">Modifier</a> | ';
         echo '</div>';
     }
 
 
 ?>
 
-<form method="POST" action="index.php">
-   <p><label for="choixAjout">Choisir une table de la base de données que vous voulez consulter/modifier :
+<form method="POST" action="index.php?tables=brassin">
+   <input type="hidden" name="tables" value="brassin">
+   <p>
         <label for="nomBrassin">Nom du brassin :<br>
-            <input type="text" id="nomBrassin" >
+            <input type="text" id="nomBrassin" name="nomBrassin">
         </label>
         <label for="dateDebut">Date de début :<br>
-            <input type="text" id="dateDebut" >
+            <input type="date" id="dateDebut" name="dateDebut">
         </label>
-                <label for="volume">Volume du brassin :<br>
-            <input type="text" id="volume" >
+        <label for="volume">Volume du brassin :<br>
+            <input type="number" id="volume" name="volume">
         </label>
-                <label for="statut">Statut :<br>
-            <input type="text" id="statut" >
-    </label></p>
+        <label for="statut">Statut :<br>
+            <input type="text" id="statut" name="statut">
+        </label>
+        <label for="id_ingredient">ID Ingrédient :<br>
+            <input type="number" id="id_ingredient" name="id_ingredient">
+        </label>
+    </p>
     <input type="submit" value="ValiderAjout">
 </form>

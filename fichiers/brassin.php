@@ -6,14 +6,16 @@ class brassin{
     private $date_debut;
     private $volume;
     private $statut;
+    private $id_ingredient;
 
-    public function __construct($id_brassin, $nom_brassin, $date_debut, $volume, $statut){
+    public function __construct($id_brassin, $nom_brassin, $date_debut, $volume, $statut, $id_ingredient){
 
         $this->id_brassin = $id_brassin;
         $this->nom_brassin = $nom_brassin;
         $this->date_debut = $date_debut;
         $this->volume = $volume;
         $this->statut = $statut;
+        $this->id_ingredient = $id_ingredient;
     }
     public function getBrassinId(){
         return $this->id_brassin;
@@ -29,6 +31,9 @@ class brassin{
     }
     public function getStatut(){
         return $this->statut;
+    }
+    public function getIdIngredient(){
+        return $this->id_ingredient;
     }
 
     //... finir les autres getters et setters ici ...
