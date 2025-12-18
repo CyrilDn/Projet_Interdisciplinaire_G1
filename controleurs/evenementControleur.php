@@ -8,7 +8,7 @@ class evenementControleur {
     public function __construct($model){
         $this->model = $model;
     }
-        public function traiterRequete() {
+    public function traiterRequete() {
         if (isset($_GET['action'])) {
             $action = $_GET['action'];
         } else {
