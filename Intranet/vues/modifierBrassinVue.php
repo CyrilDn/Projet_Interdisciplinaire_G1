@@ -1,6 +1,6 @@
 <h2>Modifier le brassin</h2>
 
-<form method="POST" action="index.php?tables=brassin&action=sauvegarderModification">
+<form method="POST" action="index.php?tables=brassin&action=modifier">
     <input type="hidden" name="id_brassin" value="<?php echo $brassin->getBrassinId(); ?>"> 
 
     <label>Nom : 

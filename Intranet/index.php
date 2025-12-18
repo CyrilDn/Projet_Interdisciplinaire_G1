@@ -36,8 +36,6 @@ if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     header("Location: index.php?action=login");
     exit();
 }
-
-// 4. CHARGEMENT DU RESTE DU SITE (Uniquement si on est connecté)
 require_once 'controleurs/brassinControleur.php';
 require_once 'models/brassinModele.php';
 require_once 'controleurs/evenementControleur.php';
