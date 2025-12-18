@@ -11,9 +11,8 @@ class employe{
 
         $this->id_employe = $id_employe;
         $this->nom_employe = $nom_employe;
-        $this->date_debut = $date_debut;
         $this->role = $role;
-        $this->occupe = $occupé;
+        $this->occupe = $occupe;
     }
     public function getemployeId(){
         return $this->id_employe;
@@ -24,9 +23,7 @@ class employe{
     public function getrole(){
         return $this->role;
     }
-    public function getDateDebut(){
-        return $this->date_debut;
-    }
+
     public function getoccupe(){
         return $this->occupe;
     }
