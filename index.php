@@ -8,17 +8,11 @@ if (isset($_GET['tables'])){
     if ($_GET ['tables'] == 'brassin') {
     $modele = new brassinModele();
     $controleur = new brassinControleur($modele);
-    $controleur->afficherBrassin();
-    if (isset($_POST)){
-        $controleur->ajouterBrassin();
-        $controleur->afficherBrassin();
-    }else{
-        echo "erreur lors de l'ajout dans la base de données";
-    }
+    $controleur ->traiterRequete();
     } elseif ($_GET ['tables'] == 'evenement') {
-    $modele = new evenementModele();
-    $controleur = new evenementControleur($modele);
-    $controleur->afficherEvenement();
+        $modele = new evenementModele();
+        $controleur = new evenementControleur($modele);
+        $controleur->afficherEvenement();
     // } elseif ($_GET ['tables'] = 'ingredient') {
     //     require_once 'vues/ingredientVue.php';
     //     $controleur = new ingredientControleur();
