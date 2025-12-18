@@ -43,15 +43,24 @@ class brassinControleur {
         include "vues/modifierBrassinVue.php";
     }
     public function modifierBrassin(){
-        $this->afficherModification();
-        if (isset($_POST['nomBrassin'])){ //on vérifie qu'il y a bien un nom de brassin dans la nouvelle modif
-            $id = $_POST['id'];
-            $nom_brassin = $_POST['nomBrassin']; 
-            $date_debut = $_POST['dateDebut'];
-            $volume = $_POST['volume']; 
-            $statut = $_POST['statut'];
-            $id_ingredient = $_POST['id_ingredient'];
-            $this->model->modifierdb($id, $nom_brassin, $date_debut, $volume, $statut, $id_ingredient);
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_brassin'])){ //si le form a été envoyé
+        $id = $_POST['id_brassin'];
+        $nom_brassin = $_POST['nomBrassin']; 
+        $date_debut = $_POST['dateDebut'];
+        $volume = $_POST['volume']; 
+        $statut = $_POST['statut'];
+        $id_ingredient = $_POST['id_ingredient'];
+        $this->model->modifierdb($id, $nom_brassin, $date_debut, $volume, $statut, $id_ingredient);
+        header("Location: index.php?tables=brassin");
+        exit();
     }
+    // Petit check pour s'assurer qu'on a bien un id dans notre url
+    if (isset($_GET['id'])) {
+        $this->afficherModification();
+    } else { //si pas d'id on revient à la liste initial
+        header("Location: index.php?tables=brassin");
+        exit();
+    }
+    $this->afficherModification(); //affiche le formulaire de modif
 }
 }
