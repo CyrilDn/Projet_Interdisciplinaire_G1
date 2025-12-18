@@ -46,7 +46,7 @@ class brassinModele{
         $resultat->bindValue('id_ingredient',$id_ingredient);
         $resultat->execute();
     }
-    public function getBrassinbyIdindb($id_brassin){
+    public function getBrassinIdindb($id_brassin){
         $bdd = $this->conn;
         $resultat = $bdd->prepare("SELECT id_brassin, nom_brassin, date_debut, volume, statut, id_ingredient FROM brassin WHERE id_brassin = :id_brassin");
         $resultat->bindValue('id_brassin', $id_brassin);
