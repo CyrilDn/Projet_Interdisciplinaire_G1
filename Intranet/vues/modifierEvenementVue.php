@@ -1,6 +1,6 @@
 <h2>Modifier l'évènement</h2>
 
-<form method="POST" action="index.php?tables=evenement&action=sauvegarderModification">
+<form method="POST" action="index.php?tables=evenement&action=modifier">
     <input type="hidden" name="idEvent" value="<?php echo $evenement->getIdEvent(); ?>"> 
 
     <label>Type d'évènement : 

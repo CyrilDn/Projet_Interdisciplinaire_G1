@@ -25,7 +25,7 @@ class employeModele{
     }
     public function ajouterdb($nom, $specialisation, $occupe, $id_materiel, $id_brassin){
         $bdd = $this->conn;
-        $resultat = $bdd->prepare("INSERT INTO brassin (nom, specialisation, occupe, id_materiel, id_brassin) VALUES (:nom, :specialisation, :occupe, :id_materiel, :id_brassin);");
+        $resultat = $bdd->prepare("INSERT INTO employe (nom, specialisation, occupe, id_materiel, id_brassin) VALUES (:nom, :specialisation, :occupe, :id_materiel, :id_brassin);");
         $resultat->bindValue('nom',$nom);
         $resultat->bindValue('specialisation',$specialisation);
         $resultat->bindValue('occupe',$occupe);

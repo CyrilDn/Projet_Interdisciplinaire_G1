@@ -46,16 +46,23 @@ class evenementControleur {
     }
 
     public function modifierEvenement(){
-        if (isset($_POST['id']) && isset($_POST['type_evenement'])){ //on vérifie qu'il y a bien un id et un type d'evenement dans la nouvelle modif
-            $id = $_POST['id'];
-            $type_evenement = $_POST['type_evenement']; 
-            $debut_evenement = $_POST['debut_evenement'];
-            $fin_evenement = $_POST['fin_evenement']; 
-            $id_employe = $_POST['id_employe'];
-            $this->model->modifierdb($id, $type_evenement, $debut_evenement, $fin_evenement, $id_employe);
-            header("Location: index.php?tables=evenement");
-            exit(); 
-        }
-
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_evenement'])){ //si le form a été envoyé
+        $id = $_POST['id_evenement'];
+        $type_evenement = $_POST['type_evenement']; 
+        $debut_evenement = $_POST['debut_evenement'];
+        $fin_evenement = $_POST['fin_evenement']; 
+        $statut = $_POST['statut'];
+        $id_ingredient = $_POST['id_ingredient'];
+        $this->model->modifierdb($id, $nom_brassin, $date_debut, $volume, $statut, $id_ingredient);
+        header("Location: index.php?tables=brassin");
+        exit();
     }
+    // Petit check pour s'assurer qu'on a bien un id dans notre url
+    if (isset($_GET['id'])) {
+        $this->afficherModification();
+    } else { //si pas d'id on revient à la liste initial
+        header("Location: index.php?tables=evenement");
+        exit();
+    }
+}
 }

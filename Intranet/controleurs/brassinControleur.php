@@ -61,6 +61,5 @@ class brassinControleur {
         header("Location: index.php?tables=brassin");
         exit();
     }
-    $this->afficherModification(); //affiche le formulaire de modif
 }
 }

@@ -1,5 +1,5 @@
 <?php
-
+require_once 'models/brassinModele.php';
 require_once 'fichiers/employe.php';
 class employeControleur {
     private $model;
@@ -12,10 +12,10 @@ class employeControleur {
         } else {
             $action = '';
         }
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->ajouterEmploye(); 
-        } elseif ($action === 'modifier') {
-            $this->afficherModification();
+        if ($action === 'modifier') {
+            $this -> modifierEmploye();
+        } elseif ($action === 'ajouter') {
+            $this->ajouterEmploye();
         } else {
             $this->afficherEmploye();
         }
@@ -29,7 +29,7 @@ class employeControleur {
         if (isset($_POST['nom'])){
             $nom = $_POST['nom']; 
             $specialisation = $_POST['specialisation'];
-            $occupe = $_POST['volume']; 
+            $occupe = $_POST['occupe']; 
             $id_materiel = $_POST['id_materiel'];
             $id_brassin = $_POST['id_brassin'];
             $this->model->ajouterdb($nom, $specialisation, $occupe, $id_materiel, $id_brassin);
@@ -39,21 +39,31 @@ class employeControleur {
 }
     public function afficherModification() {
         $id = $_GET['id'];
-        $brassin = $this->model->getEmployeIdindb($id); //on définit notre brassin à modifier et on le store dans $brassin
+        $employe = $this->model->getEmployeIdindb($id); //on définit notre employe à modifier et on le store dans $employe
+        $brassinModele = new BrassinModele();
+        $listeBrassins = $brassinModele->liredb();
         include "vues/modifierEmployeVue.php";
     }
     public function modifierEmploye(){
-        if (isset($_POST['id']) && isset($_POST['nom'])){ //on vérifie qu'il y a bien un id et un nom de brassin dans la nouvelle modif
-            $id = $_POST['id'];
-            $nom = $_POST['nom']; 
-            $specialisation = $_POST['specialisation'];
-            $occupe = $_POST['occupe']; 
-            $id_materiel = $_POST['id_materiel'];
-            $id_brassin = $_POST['id_brassin'];
-            $this->model->modifierdb($id, $nom, $specialisation, $occupe, $id_materiel, $id_brassin);
-            header("Location: index.php?tables=employe");
-            exit(); 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_employe'])){ //si le form a été envoyé
+        $id = $_POST['id_employe'];
+        $nom = $_POST['nom']; 
+        $specialisation = $_POST['specialisation'];
+        $occupe = $_POST['occupe']; 
+        $id_materiel = $_POST['id_materiel'];
+        $id_brassin = $_POST['id_brassin'];
+        $this->model->modifierdb($id, $nom, $specialisation, $occupe, $id_materiel, $id_brassin);
+        header("Location: index.php?tables=employe");
+        exit();
     }
+    // Petit check pour s'assurer qu'on a bien un id dans notre url
+    if (isset($_GET['id'])) {
+        $this->afficherModification();
+    } else { //si pas d'id on revient à la liste initial
+        header("Location: index.php?tables=employe");
+        exit();
+    }
+    
+}
 }
 
-}
