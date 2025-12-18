@@ -13,7 +13,7 @@
 
 ?>
 
-<form method="POST" action="index.php?tables=brassin">
+<form method="POST" action="index.php?tables=brassin&action=ajouter">
    <input type="hidden" name="tables" value="brassin">
    <p>
         <label for="nomBrassin">Nom du brassin :<br>

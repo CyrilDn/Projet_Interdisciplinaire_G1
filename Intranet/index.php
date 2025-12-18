@@ -54,7 +54,7 @@ if ($table == 'brassin') {
     $modele = new evenementModele();
     $controleur = new evenementControleur($modele);
     $controleur->traiterRequete();
-} elseif ($table == 'evenement') {
+} elseif ($table == 'employe') {
     $modele = new employeModele();
     $controleur = new employeControleur($modele);
     $controleur->traiterRequete();
@@ -74,7 +74,7 @@ if ($table == 'brassin') {
         <select name="tables">
             <option value="brassin">Brassin</option>
             <option value="evenement">Événement</option>
-            <option value="employe">Événement</option>
+            <option value="employe">Employé</option>
         </select>
         <input type="submit" value="Consulter">
     </form>

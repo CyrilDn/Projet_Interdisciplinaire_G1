@@ -16,6 +16,7 @@ class brassinControleur {
         $this->ajouterBrassin(); 
     } elseif ($action === 'modifier') {
         $this->afficherModification();
+        $this->modifierBrassin();
     } else {
         $this->afficherBrassin();
     }
@@ -39,11 +40,11 @@ class brassinControleur {
 }
     public function afficherModification() {
         $id = $_GET['id'];
-        $brassin = $this->model->getBrassinbyIdindb($id); //on définit notre brassin à modifier et on le store dans $brassin
+        $brassin = $this->model->getBrassinIdindb($id); //on définit notre brassin à modifier et on le store dans $brassin
         include "vues/modifierBrassinVue.php";
     }
     public function modifierBrassin(){
-        if (isset($_POST['id']) && isset($_POST['nomBrassin'])){ //on vérifie qu'il y a bien un id et un nom de brassin dans la nouvelle modif
+        if (isset($_POST['id'])){ //on vérifie qu'il y a bien un id et un nom de brassin dans la nouvelle modif
             $id = $_POST['id'];
             $nom_brassin = $_POST['nomBrassin']; 
             $date_debut = $_POST['dateDebut'];
@@ -52,7 +53,7 @@ class brassinControleur {
             $id_ingredient = $_POST['id_ingredient'];
             $this->model->modifierdb($id, $nom_brassin, $date_debut, $volume, $statut, $id_ingredient);
             header("Location: index.php?tables=brassin");
-            exit(); 
+            exit();
     }
 }
 }
