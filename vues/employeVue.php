@@ -11,6 +11,7 @@
         echo '<p>Rôle employé : ' . $ligne->getSpecialisation() . '</p>';
         echo '<p> : ' . $ligne->getId_materiel() . '</p>';
         echo '<p>Statut : ' . $ligne->getId_brassin() . '</p>';
+        echo '<a href="index.php?tables=employe&action=modifier&id=' . $ligne->getemployeId() . '">Modifier</a> | ';
         echo '</div>';
     }
     
