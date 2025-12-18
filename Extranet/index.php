@@ -54,7 +54,7 @@ if ($table == 'brassin') {
     $modele = new evenementModele();
     $controleur = new evenementControleur($modele);
     $controleur->traiterRequete();
-} elseif ($table == 'evenement') {
+} elseif ($table == 'employe') {
     $modele = new employeModele();
     $controleur = new employeControleur($modele);
     $controleur->traiterRequete();
