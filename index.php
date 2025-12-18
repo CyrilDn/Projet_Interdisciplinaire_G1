@@ -42,6 +42,8 @@ require_once 'controleurs/brassinControleur.php';
 require_once 'models/brassinModele.php';
 require_once 'controleurs/evenementControleur.php';
 require_once 'models/evenementModele.php';
+require_once 'controleurs/employeControleur.php';
+require_once 'models/employeModele.php';
 
 if ($table == 'brassin') {
     $modele = new brassinModele();
@@ -51,9 +53,14 @@ if ($table == 'brassin') {
 } elseif ($table == 'evenement') {
     $modele = new evenementModele();
     $controleur = new evenementControleur($modele);
-    $controleur->afficherEvenement();
+    $controleur->traiterRequete();
+} elseif ($table == 'evenement') {
+    $modele = new employeModele();
+    $controleur = new employeControleur($modele);
+    $controleur->traiterRequete();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -67,6 +74,7 @@ if ($table == 'brassin') {
         <select name="tables">
             <option value="brassin">Brassin</option>
             <option value="evenement">Événement</option>
+            <option value="employe">Événement</option>
         </select>
         <input type="submit" value="Consulter">
     </form>
