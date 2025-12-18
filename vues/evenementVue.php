@@ -7,7 +7,7 @@
         echo '<p>Type d\'evenement : ' . $ligne->getTypeEvent() . '</p>';
         echo '<p>Date de début : ' . $ligne->getDebutEvent() . '</p>';
         echo '<p>Date de fin : ' . $ligne->getFinEvent() . '</p>';
-        echo '<p>Numéro du responsable : ' . $ligne->getemployeId() . '</p>';
+        echo '<p>Numéro du responsable : ' . $ligne->getIdEmploye() . '</p>';
         echo '<a href="index.php?tables=evenement&action=modifier&id=' . $ligne->getIdEvent() . '">Modifier</a> | ';
         echo '</div>';
     }

@@ -41,7 +41,7 @@ class evenementControleur {
     }
     public function afficherModification() {
         $id = $_GET['id'];
-        $evenement = $this->model->getEvenementbyIdindb($id); //on définit notre evenement à modifier et on le store dans $evenement
+        $evenement = $this->model->getEvenementIdindb($id); //on définit notre evenement à modifier et on le store dans $evenement
         include "vues/modifierEvenementVue.php";
     }
 
