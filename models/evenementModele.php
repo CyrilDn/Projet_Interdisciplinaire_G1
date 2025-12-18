@@ -14,9 +14,9 @@ class evenementModele{
     public function liredb() {
         $bdd = $this->conn; 
         $resultat = $bdd->query("SELECT id_evenement, type_evenement, debut_evenement, fin_evenement, id_employe FROM evenement");
-        $evenement = [];
+        $evenements = [];
         while ($ligne = $resultat->fetch()) { //pour chaque ligne on crée un objet evenement en utilisant notre constructeur
-            $evenement[] = new Evenement(
+            $evenements[] = new Evenement(
                 $ligne['id_evenement'],
                 $ligne['type_evenement'],
                 $ligne['debut_evenement'],
@@ -24,7 +24,7 @@ class evenementModele{
                 $ligne['id_employe'],
             );
         }
-        return $evenement;
+        return $evenements;
     }
     public function ajouterdb($type_evenement, $debut_evenement, $fin_evenement, $id_employe){
         $bdd = $this->conn;

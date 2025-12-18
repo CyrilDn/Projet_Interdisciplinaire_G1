@@ -1,8 +1,6 @@
 <?php
     require_once 'fichiers/brassin.php';
 
-
-
     foreach($bd as $ligne) {
         echo '<div">';
         echo '<h2>Id Brassin : ' . $ligne->getBrassinId() . '</h2>';
@@ -12,7 +10,6 @@
         echo '<a href="index.php?tables=brassin&action=modifier&id=' . $ligne->getBrassinId() . '">Modifier</a> | ';
         echo '</div>';
     }
-
 
 ?>
 
