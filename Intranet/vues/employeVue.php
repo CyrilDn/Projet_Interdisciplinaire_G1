@@ -1,7 +1,11 @@
 <?php
     require_once 'fichiers/employe.php'; 
+?>
+<div class="bloc-centre">
+<?php
+
     foreach($bd as $ligne) {
-        echo '<div">';
+        echo '<div class="element">';
         echo '<h2>Id employé : ' . htmlspecialchars($ligne->getemployeId()) . '</h2>';
         echo '<p>Nom employé : ' . htmlspecialchars($ligne->getNom()) . '</p>';
         echo '<p>Rôle employé : ' . htmlspecialchars($ligne->getSpecialisation()) . '</p>';
@@ -10,9 +14,10 @@
         echo '<a href="index.php?tables=employe&action=modifier&id=' . htmlspecialchars($ligne->getemployeId()) . '">Modifier</a> | ';
         echo '</div>';
     }
-    
-?>
 
+?>
+</div>
+<div class="bloc-centre">
 <form method="POST" action="index.php?tables=employe&action=ajouter">
    <input type="hidden" name="tables" value="id_employe">
    <p>
@@ -34,3 +39,4 @@
     </p>
     <input type="submit" value="ValiderAjout">
 </form>
+</div>

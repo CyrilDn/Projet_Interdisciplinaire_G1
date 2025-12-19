@@ -10,6 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
 }
@@ -24,12 +25,12 @@ body {
 
 .bloc-centre {
     background: white;
-    padding: 40px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 100%;
-    
+    margin-top: 50px;
     /* Affichage en colonne des éléments internes */
     display: flex;
     flex-direction: column;
