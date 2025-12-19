@@ -2,12 +2,12 @@
     require_once 'fichiers/employe.php'; 
     foreach($bd as $ligne) {
         echo '<div">';
-        echo '<h2>Id employé : ' . $ligne->getemployeId() . '</h2>';
-        echo '<p>Nom employé : ' . $ligne->getNom() . '</p>';
-        echo '<p>Rôle employé : ' . $ligne->getSpecialisation() . '</p>';
-        echo '<p> : ' . $ligne->getId_materiel() . '</p>';
-        echo '<p>Statut : ' . $ligne->getId_brassin() . '</p>';
-        echo '<a href="index.php?tables=employe&action=modifier&id=' . $ligne->getemployeId() . '">Modifier</a> | ';
+        echo '<h2>Id employé : ' . htmlspecialchars($ligne->getemployeId()) . '</h2>';
+        echo '<p>Nom employé : ' . htmlspecialchars($ligne->getNom()) . '</p>';
+        echo '<p>Rôle employé : ' . htmlspecialchars($ligne->getSpecialisation()) . '</p>';
+        echo '<p> : ' . htmlspecialchars($ligne->getId_materiel()) . '</p>';
+        echo '<p>Statut : ' . htmlspecialchars($ligne->getId_brassin()) . '</p>';
+        echo '<a href="index.php?tables=employe&action=modifier&id=' . htmlspecialchars($ligne->getemployeId()) . '">Modifier</a> | ';
         echo '</div>';
     }
     

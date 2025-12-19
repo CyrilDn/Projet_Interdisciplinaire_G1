@@ -3,12 +3,12 @@
 
     foreach($bd as $ligne) {
         echo '<div">';
-        echo '<h2>Id Evenement : ' . $ligne->getIdEvent() . '</h2>';
-        echo '<p>Type d\'evenement : ' . $ligne->getTypeEvent() . '</p>';
-        echo '<p>Date de début : ' . $ligne->getDebutEvent() . '</p>';
-        echo '<p>Date de fin : ' . $ligne->getFinEvent() . '</p>';
-        echo '<p>Numéro du responsable : ' . $ligne->getIdEmploye() . '</p>';
-        echo '<a href="index.php?tables=evenement&action=modifier&id=' . $ligne->getIdEvent() . '">Modifier</a> | ';
+        echo '<h2>Id Evenement : ' . htmlspecialchars($ligne->getIdEvent()) . '</h2>';
+        echo '<p>Type d\'evenement : ' . htmlspecialchars($ligne->getTypeEvent()) . '</p>';
+        echo '<p>Date de début : ' . htmlspecialchars($ligne->getDebutEvent()) . '</p>';
+        echo '<p>Date de fin : ' . htmlspecialchars($ligne->getFinEvent()) . '</p>';
+        echo '<p>Numéro du responsable : ' . htmlspecialchars($ligne->getIdEmploye()) . '</p>';
+        echo '<a href="index.php?tables=evenement&action=modifier&id=' . htmlspecialchars($ligne->getIdEvent()) . '">Modifier</a> | ';
         echo '</div>';
     }
 
