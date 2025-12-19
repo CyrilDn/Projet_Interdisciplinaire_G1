@@ -14,5 +14,5 @@
 **Diagramme de classe**
 ![Class Diagram](./img/UMLv4.drawio.png)
 
-## Schéma UML
+## Schéma Topologie Réseau
 ![screenshot pkt network topology](./img/Schema_topologie_reseau.png)
