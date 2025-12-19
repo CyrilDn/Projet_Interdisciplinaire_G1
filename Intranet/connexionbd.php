@@ -3,7 +3,7 @@
 class connexionbd {
 
     private $hote = "localhost";
-    private $nom_bd = "bd_brassin";
+    private $nom_bd = "bd_brassin_or";
     private $nom_util = "root";
     private $mdp = "";
     public $conn;
