@@ -1,5 +1,9 @@
 <?php
     require_once 'fichiers/brassin.php';
+?>
+
+<div class="bloc-centre">
+<?php
 
     foreach($bd as $ligne) {
         echo '<div">';
@@ -12,7 +16,9 @@
     }
 
 ?>
+</div>
 
+<div class="bloc-centre">
 <form method="POST" action="index.php?tables=brassin&action=ajouter">
    <input type="hidden" name="tables" value="brassin">
    <p>
@@ -34,3 +40,4 @@
     </p>
     <input type="submit" value="ValiderAjout">
 </form>
+</div>
