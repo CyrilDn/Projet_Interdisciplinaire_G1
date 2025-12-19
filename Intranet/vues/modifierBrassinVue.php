@@ -1,3 +1,4 @@
+<div class="bloc-centre">
 <h2>Modifier le brassin</h2>
 
 <form method="POST" action="index.php?tables=brassin&action=modifier">
@@ -23,3 +24,4 @@
 
     <input type="submit" value="Enregistrer les modifications">
 </form>
+</div>

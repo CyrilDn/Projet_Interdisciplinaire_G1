@@ -1,8 +1,10 @@
 <?php
     require_once 'fichiers/evenement.php';
-
+?>
+<div class="bloc-centre">
+<?php
     foreach($bd as $ligne) {
-        echo '<div">';
+        echo '<div class="element">';
         echo '<h2>Id Evenement : ' . $ligne->getIdEvent() . '</h2>';
         echo '<p>Type d\'evenement : ' . $ligne->getTypeEvent() . '</p>';
         echo '<p>Date de début : ' . $ligne->getDebutEvent() . '</p>';
@@ -13,7 +15,8 @@
     }
 
 ?>
-
+</div>
+<div class="bloc-centre">
 <form method="POST" action="index.php?tables=evenement&action=ajouter">
    
    <p>
@@ -32,3 +35,4 @@
     </p>
     <input type="submit" value="ValiderAjout">
 </form>
+</div>

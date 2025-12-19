@@ -1,3 +1,4 @@
+<div class="bloc-centre">
 <h2>Modifier les employés</h2>
 
 <form method="POST" action="index.php?tables=employe&action=modifier">
@@ -30,3 +31,4 @@
 
     <input type="submit" value="Enregistrer les modifications">
 </form>
+</div>
