@@ -6,7 +6,7 @@
 <?php
 
     foreach($bd as $ligne) {
-        echo '<div">';
+        echo '<div class="element">';
         echo '<h2>Id Brassin : ' . $ligne->getBrassinId() . '</h2>';
         echo '<p>Nom : ' . $ligne->getNomBrassin() . '</p>';
         echo '<p>Volume : ' . $ligne->getVolume() . '</p>';

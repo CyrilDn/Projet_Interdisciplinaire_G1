@@ -1,3 +1,4 @@
+<div class="bloc-centre">
 <h2>Modifier l'évènement</h2>
 
 <form method="POST" action="index.php?tables=evenement&action=modifier">
@@ -21,3 +22,4 @@
 
     <input type="submit" value="Enregistrer les modifications">
 </form>
+</div>
