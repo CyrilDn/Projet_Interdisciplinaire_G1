@@ -34,7 +34,7 @@ CREATE TABLE `brassin` (
   `volume` int NOT NULL,
   `statut` tinyint(1) NOT NULL,
   `id_ingredient` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `brassin`
@@ -58,7 +58,7 @@ CREATE TABLE `document` (
   `type_doc` varchar(50) NOT NULL,
   `date_ajout` date NOT NULL,
   `chemin` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -69,11 +69,11 @@ CREATE TABLE `document` (
 CREATE TABLE `employe` (
   `id_employe` int NOT NULL,
   `nom` varchar(25) NOT NULL,
-  `specialisation` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_general_ci NOT NULL,
+  `specialisation` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `occupe` varchar(1) NOT NULL,
   `id_materiel` int NOT NULL,
   `id_brassin` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `employe`
@@ -97,7 +97,7 @@ CREATE TABLE `evenement` (
   `debut_evenement` date NOT NULL,
   `fin_evenement` date NOT NULL,
   `id_employe` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `evenement`
@@ -120,7 +120,7 @@ CREATE TABLE `ingredient` (
   `nom_ingredient` varchar(25) NOT NULL,
   `quantite_kg` float NOT NULL,
   `seuil_min_kg` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ingredient`
@@ -141,7 +141,7 @@ CREATE TABLE `materiel` (
   `id_materiel` int NOT NULL,
   `nom` varchar(25) NOT NULL,
   `utilise` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `materiel`
@@ -163,7 +163,7 @@ CREATE TABLE `produit` (
   `nom` varchar(25) NOT NULL,
   `quantite` int NOT NULL,
   `prix` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `produit`
