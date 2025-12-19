@@ -51,9 +51,8 @@ class evenementControleur {
         $type_evenement = $_POST['type_evenement']; 
         $debut_evenement = $_POST['debut_evenement'];
         $fin_evenement = $_POST['fin_evenement']; 
-        $statut = $_POST['statut'];
-        $id_ingredient = $_POST['id_ingredient'];
-        $this->model->modifierdb($id, $nom_brassin, $date_debut, $volume, $statut, $id_ingredient);
+        $id_employe = $_POST['id_employe'];
+        $this->model->modifierdb($id, $type_evenement, $debut_evenement, $fin_evenement, $id_employe);
         header("Location: index.php?tables=brassin");
         exit();
     }

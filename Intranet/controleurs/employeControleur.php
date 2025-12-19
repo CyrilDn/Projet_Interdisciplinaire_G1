@@ -1,5 +1,5 @@
 <?php
-require_once 'models/brassinModele.php';
+
 require_once 'fichiers/employe.php';
 class employeControleur {
     private $model;
