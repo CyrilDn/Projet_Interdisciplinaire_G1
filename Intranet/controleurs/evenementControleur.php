@@ -14,14 +14,14 @@ class evenementControleur {
         } else {
             $action = '';
         }
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->ajouterEvenement(); 
-        } elseif ($action === 'modifier') {
-            $this->afficherModification();
+        if ($action === 'modifier') {
+            $this->modifierEvenement();
+        } elseif ($action === 'ajouter') {
+            $this->ajouterEvenement();
         } else {
             $this->afficherEvenement();
         }
-    }
+}
 
     public function afficherEvenement(){
         $bd = $this->model->liredb();
@@ -29,6 +29,7 @@ class evenementControleur {
     }
 
     public function ajouterEvenement(){
+        var_dump($_POST);
         if (isset($_POST['type_evenement'])){
             $type_evenement = $_POST['type_evenement']; 
             $debut_evenement = $_POST['debut_evenement'];
@@ -53,7 +54,7 @@ class evenementControleur {
         $fin_evenement = $_POST['fin_evenement']; 
         $id_employe = $_POST['id_employe'];
         $this->model->modifierdb($id, $type_evenement, $debut_evenement, $fin_evenement, $id_employe);
-        header("Location: index.php?tables=brassin");
+        header("Location: index.php?tables=evenement");
         exit();
     }
     // Petit check pour s'assurer qu'on a bien un id dans notre url

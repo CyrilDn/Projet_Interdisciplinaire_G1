@@ -30,9 +30,9 @@ class evenementModele{
         $bdd = $this->conn;
         $resultat = $bdd->prepare("INSERT INTO evenement (type_evenement, debut_evenement, fin_evenement, id_employe) VALUES (:type_evenement, :debut_evenement, :fin_evenement, :id_employe);");
         $resultat->bindValue('type_evenement',$type_evenement);
-        $resultat->bindValue('date_debut',$debut_evenement);
-        $resultat->bindValue('volume',$fin_evenement);
-        $resultat->bindValue('statut',$id_employe);
+        $resultat->bindValue('debut_evenement',$debut_evenement);
+        $resultat->bindValue('fin_evenement',$fin_evenement);
+        $resultat->bindValue('id_employe',$id_employe);
         $resultat->execute();
     }
     public function modifierdb($id, $type_evenement, $debut_evenement, $fin_evenement, $id_employe){
