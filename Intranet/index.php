@@ -64,19 +64,27 @@ if ($table == 'brassin') {
 <head>
     <meta charset="UTF-8">
     <title>Brassin d'Or</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <div class="conteneur">
+    <div class="bloc-secondaire"></div>
     <h2>Intranet:</h2>
     <form method="get" action="index.php">
+        <div class="petit-element"></div>
         <label>Choisir une table :</label>
+
         <select name="tables">
             <option value="brassin">Brassin</option>
             <option value="evenement">Événement</option>
             <option value="employe">Employé</option>
         </select>
         <input type="submit" value="Consulter">
+        </div>
+    </div>
     </form>
     <br>
     <a href="index.php?action=deconnecter">Se déconnecter</a>
+    </div>
 </body>
 </html>
