@@ -5,8 +5,6 @@ class loginControleur {
     }
 
     public function authentifier() {
-        ini_set('display_errors', 1);
-        error_reporting(E_ALL);
         $user = $_POST['util'];
         $mdp = $_POST['password'];
 
@@ -18,7 +16,7 @@ class loginControleur {
         ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
         // Tentative de connexion 
-        if ($user != "" && strlen($mdp) > 5) {
+        if ($user != "" && $mdp != "") {
             if (@ldap_bind($ldap, $ldaprdn, $mdp)) {
                 session_start();
                 $_SESSION['user'] = $user;

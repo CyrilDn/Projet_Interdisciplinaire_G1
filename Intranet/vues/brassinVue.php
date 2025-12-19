@@ -6,12 +6,12 @@
 <?php
 
     foreach($bd as $ligne) {
-        echo '<div class="element">';
-        echo '<h2>Id Brassin : ' . $ligne->getBrassinId() . '</h2>';
-        echo '<p>Nom : ' . $ligne->getNomBrassin() . '</p>';
-        echo '<p>Volume : ' . $ligne->getVolume() . '</p>';
-        echo '<p>Statut : ' . $ligne->getStatut() . '</p>';
-        echo '<a href="index.php?tables=brassin&action=modifier&id=' . $ligne->getBrassinId() . '">Modifier</a> | ';
+        echo '<div class =element">';
+        echo '<h2>Id Brassin : ' . htmlspecialchars($ligne->getBrassinId()) . '</h2>';
+        echo '<p>Nom : ' . htmlspecialchars($ligne->getNomBrassin()) . '</p>';
+        echo '<p>Volume : ' . htmlspecialchars($ligne->getVolume()) . '</p>';
+        echo '<p>Statut : ' . htmlspecialchars($ligne->getStatut()) . '</p>';
+        echo '<a href="index.php?tables=brassin&action=modifier&id=' . htmlspecialchars($ligne->getBrassinId()) . '">Modifier</a> | ';
         echo '</div>';
     }
 
